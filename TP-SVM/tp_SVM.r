@@ -57,14 +57,12 @@
     ########################
 
          # load the kernlab package
-         # install.packages("kernlab")
          library(kernlab)
 
          # train the SVM
          svp <- ksvm(xtrain, ytrain, type = "C-svc", kernel = "vanilladot", C=100, scaled=c())
 
          #Look and understand what svp contains
-         # General summary
          svp
 
          # Attributes that you can access
@@ -115,7 +113,6 @@ plotlinearsvm(svp, xtrain)                                                      
          table(ypredscore > 0, ypred)
 
          # Package to compute ROC curve, precision-recall etc...
-         # install.packages("ROCR")
          library(ROCR)
          pred <- prediction(ypredscore, ytest)
 
